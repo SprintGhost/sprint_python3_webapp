@@ -7,10 +7,10 @@
 '''
 import logging;logging.basicConfig(level=logging.INFO)
 
-import asyncio,os,json,time
+import asyncio,os,json,time,uuid
 from datetime import datetime
 from aiohttp import web
-from orm import Model, StringField, IntegerField
+from orm import Model, StringField, BooleanField, FloatField, TextField
 def index(request):
     return web.Response(body=b'<h1>Sprint</h1>',content_type='text/html',charset='UTF-8')
 #如果不加后面的content_type='text/html',charset='UTF-8'会因编码问题导致显示的为下载文件
