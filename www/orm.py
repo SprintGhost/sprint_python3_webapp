@@ -12,6 +12,12 @@ import aiomysql
 def log(sql, args=()):
     logging.info('SQL: %s' % sql)
 
+async def destroy_pool(): #销毁连接池
+    global __pool
+    if __pool is not None:
+        __pool.close()
+        await __pool.wait_closed()
+
 async def create_pool(loop, **kw):
     logging.info('create database connection pool...')
     global __pool

@@ -5,6 +5,7 @@
 @file:app.py
 @time:2016 16-12-6 下午3:29
 '''
+
 import logging;logging.basicConfig(level=logging.INFO)
 
 import asyncio,os,json,time,uuid
@@ -26,3 +27,4 @@ async def init(loop):
 loop = asyncio.get_event_loop()
 loop.run_until_complete(init(loop))
 loop.run_forever()
+
